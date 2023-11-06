@@ -12,7 +12,7 @@ public class DataResult<T> extends Result{
         this.data=data;
     }
 
-    public DataResult(boolean success, T data, String message) {
+    public DataResult(boolean success, String message, T data) {
         super(success, message);
         this.data=data;
     }

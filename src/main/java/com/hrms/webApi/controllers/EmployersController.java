@@ -2,6 +2,7 @@ package com.hrms.webApi.controllers;
 
 import com.hrms.business.abstracts.EmployerService;
 import com.hrms.entities.Employer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class EmployersController {
 
     EmployerService _employerService;
+
+    @Autowired
+    public EmployersController(EmployerService _employerService) {
+        this._employerService = _employerService;
+    }
 
     @PostMapping("/add")
     public ResponseEntity<Object> add(@RequestBody Employer employer){
